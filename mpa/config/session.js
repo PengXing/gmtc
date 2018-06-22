@@ -9,27 +9,27 @@ module.exports = {
   enable: true,
 
   /**
-     *  session store，默认本地内存
-     *
-     * ```javascript
-     *
-     * {
-     *     set(sid, session, ttl) {
-     *         return new Promise();
-     *     },
-     *
-     *     get(sid) {
-     *         return new Promise();
-     *     },
-     *
-     *     destroy(sid) {
-     *         return new Promise();
-     *     }
-     * }
-     *
-     * ```
-     * @type {Object|undefined}
-     */
+   *  session store，默认本地内存
+   *
+   * ```javascript
+   *
+   * {
+   *     set(sid, session, ttl) {
+   *         return new Promise();
+   *     },
+   *
+   *     get(sid) {
+   *         return new Promise();
+   *     },
+   *
+   *     destroy(sid) {
+   *         return new Promise();
+   *     }
+   * }
+   *
+   * ```
+   * @type {Object|undefined}
+   */
   store: null,
 
   keys: ['akb'],
