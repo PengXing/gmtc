@@ -66,5 +66,6 @@ function handler (value) {
     }
 
     ctx.set('Content-Type', 'text/javascript; charset=UTF-8')
+    ctx.set('Access-Control-Allow-Origin', '*')
   }
 }

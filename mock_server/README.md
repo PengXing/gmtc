@@ -10,7 +10,7 @@ mock server 是给前端开发人员调试时使用的
 $ node app.js
 ```
 
-## 编写
+## 如何编写测试接口
 
 编写 config.js 文件，如下面的例子
 
