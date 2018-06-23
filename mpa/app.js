@@ -7,7 +7,6 @@
 
 const Koa = require('koa')
 const Router = require('koa-router')
-const render = require('./view')
 
 const app = new Koa()
 const router = new Router()
@@ -20,15 +19,12 @@ app.use(async (ctx, next) => {
   console.log(`${ctx.method} ${ctx.url} - ${ms}ms`)
 })
 
-// TODO: 需要开发者编辑的地方
-router.get('/', async ctx => {
-  ctx.body = render('index', {title: 'home page'})
-})
+router.get('/', require('./actions/index'))
 
 app
   .use(router.routes())
   .use(router.allowedMethods())
 
 app.listen(8080, () => {
-  console.log('started')
+  console.log('mpa server started')
 })

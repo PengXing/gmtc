@@ -40,7 +40,7 @@ app
   .use(router.allowedMethods())
 
 app.listen(8079, () => {
-  console.log('started')
+  console.log('mock server started')
 })
 
 /**

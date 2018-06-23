@@ -3,5 +3,5 @@
 {{ block: title }}${title}{{/block}}
 
 {{ block: body }}
-Hello World.
+Hello ${name}.
 {{/block}}

@@ -1,12 +1,16 @@
 {
   "name": "mpa",
   "scripts": {
-    "dev": "node app.js",
+    "dev": "nodemon app.js",
     "start": "node prod.js"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "etpl": "^3.2.0",
     "koa": "^2.5.1",
     "koa-router": "^7.4.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.17.5"
   }
 }
