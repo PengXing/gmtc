@@ -1,0 +1,11 @@
+{
+  "name": "gmtc",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha"
+  },
+  "devDependencies": {
+    "assert": "^1.4.1",
+    "mocha": "^5.2.0",
+    "supertest": "^3.1.0"
+  }
+}

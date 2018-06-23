@@ -25,7 +25,9 @@ GMTC 前后端分离培训
 1. 挑选你的方案，这里只有 mpa 和 spa 的脚手架，ssr 暂无
 2. 根据接口文档编写前端开发者用于调试的 mock 接口，参见 `mock_server`
 3. 在 mpa/spa 项目里通过调用请求，获取 mock server 里的测试数据
-4. 将数据显示在主页上
+4. 将数据显示在页面上
+5. 编写 testcase，测试获取天气接口是否正确
+
 
 ### 如何发送请求
 
@@ -45,3 +47,33 @@ axios.get('http://localhoust:8079/api/user')
 ```
 
 上面发送请求的代码在 spa 和 mpa 项目中都有对应的例子，可以参阅
+
+### 如何编写测试用例
+
+在 test 目录中增加一个文件，如 `example.test.js`
+
+```javascript
+
+describe('weather', function () {
+  const request = supertest('http://127.0.0.1:8079')
+
+  // 测试 API weather 是否正确
+  it('get weather', function (done) {
+    request.get('/api/user')
+      .expect('Content-Type', 'text/javascript; charset=UTF-8')
+      .expect('Access-Control-Allow-Origin', '*')
+      .expect(200)
+      .end(function (err, res) {
+        assert.ifError(err)
+        let text = res.text
+        let data = JSON.parse(text)
+
+        assert.equal(0, data.status)
+        assert.equal('sekiyika', data.data.name)
+        done()
+      })
+  })
+})
+```
+
+编写完成后，在根目录运行 `npm run test` 可查看测试用例运行的结果
